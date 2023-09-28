@@ -1,0 +1,29 @@
+Onaegis
+
+Inspiration
+
+The inspiration behind Onaegis came from knowing a victim of a scam, as well as seeing how many content creators on YouTube are complaining about their poor regulations of comments. I've always been a fan of creators on YouTube, and taking advantage of the entertainment and educational videos that YouTube has to offer. However, hearing about how there are many people out there who get scammed (especially now, since they are getting more and more advanced and believable) made me sick. One thought that I noticed a lot of creators have is that "Who would fall for this", which is perhaps why most do not take it that seriously, however, my thought was - "if they are still doing it, they must be succeeding somewhat", and I think helping to prevent even just one more person from getting scammed is completely worth it all.
+
+How we built it
+
+The way Onaegis was built is through the effective use of both the YouTube API and the OpenAI GPT-3 Fine-tuning models API. I first had to set-up a Google Cloud Console application to retrieve an API key that I could use to call the YouTube API - as the application I am making uses sensitive scopes on Google (as I aim to delete/moderate the comments on users YouTube account to make the process completely automated), the users are currently prompted to a "Not Verified Page". They can still proceed by clicking "advanced", however, to prevent this I am currently in the process of verification by Google.
+
+Nevertheless, through Google I use an OAuth authentication process to get the users consent to access their YouTube data with the necessary permissions. I then took advantage of the wix-velo API services, and special files like the jobs.config file, http-functions.js, events.js, and data.js files. The jobs.config file was to set the automation for the retrieval of users YouTube channel information, cleaning of their recent comments, and deletion of the bot-detected comments. I used the events.js file to make sure that if a user purchases a subscription plan after the execution of the job scheduled, they will automatically have their YouTube comments cleaned (this was so that customers dont miss a day out on their purchases). The data hooks or data.js file was predominantly used to ensure that there are never any duplicates in the dataset and the http-functions.js file was used to handle the redirect from the google consent form page. Across the project, there were multiple Velo API's used, such as wixData to communicate with the database and keep up-to-date information on users channels, wix Location to redirect users to external sites such as the google authentication page, wix-members which was necessary in displaying the correct information to the right member, and wix-fetch to communicate with the youtube api and the openAI API.
+
+Challenges we ran into
+
+One of the challenges during the development of Onaegis was the integration of the OAuth process through Google. This had taken a while as I had previously not used any OAuth integration on a site, and this being my first Web-Development Hackathon made it much more challenging. Additionally, the Google API appeared to be fairly unstable, which made it significantly more difficult to track when the error was on my end or Googles'. This was prevalent at the last 3 hours of the Hackathon, as a function that I had wrote became unstable and returned an "Forbidden" error randomly.
+
+Accomplishments that we're proud of
+
+The main accomplishment I am proud of is this being my first Hackathon, first live solo-project, and first time ever coding in JS. This was a very big milestone in my coding skills for me to reach and I had initially taken it up to see where my skills were at.  I began coding no more than 6 months ago and thought taking on a Hackathon like this would be fun! It sure taught me a lot, where I could plan better, and perhaps even being in a team in the future to make the process easier and smoother.
+
+What we learned
+
+I learnt a lot about how to code in JS, as well as important coding knowledge such as integrating the Google OAuth process and the OpenAI Fine-Tuning API to a website. I believe these two knowledges are extremely transferrable into other projects,  which I am very happy about.
+
+What's next for Onaegis
+
+The business plan in mind to follow is to firstly optimize the site more so that it runs faster and smoother, improve on the error catches (especially when the error is external), and finally slowly integrate the comment checks on other social media platforms such as Instagram, Facebook, and TikTok.
+
+www.onaegis.com
